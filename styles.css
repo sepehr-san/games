@@ -17,7 +17,6 @@ h1 {
   max-width: 500px;
   margin: 10px auto;
   border-radius: 10px;
-  /* padding-bottom: 1rem; */
 }
 #header {
   background-color: #104F55;
@@ -40,7 +39,10 @@ h1 {
   border-radius: 50%;
   margin: 1.5rem;
   cursor: pointer;
+  background-color: #9EC5AB;
 }
+
+
 #submit {
   display: none;
   cursor: pointer;
@@ -60,50 +62,10 @@ h1 {
 }
 
 
-#o1 {
-  background-color: orange;
-  filter: saturate(0);
-}
-#o2 {
-  background-color: rgb(0, 255, 170);
-  filter: saturate(0);
-}
-#o3 {
-  background-color: rgb(0, 255, 51);
-  filter: saturate(0);
-}
-#o4 {
-  background-color: rgb(0, 255, 0);
-  filter: saturate(0);
-}
-#o5 {
-  background-color: rgb(0, 255, 123);
-  filter: saturate(0);
-}
-#o6 {
-  background-color: rgb(255, 119, 0);
-  filter: saturate(0);
-}
-#o7 {
-  background-color: rgb(0, 225, 255);
-  filter: saturate(0);
-}
-#o8 {
-  background-color: rgb(255, 128, 0);
-  filter: saturate(0);
-}
-#o9 {
-  background-color: rgb(229, 156, 37);
-  filter: saturate(0);
-}
-
 @media only screen and (max-width: 320px) {
   .button {
     width: 50px;
     height: 50px;
     margin: 1rem;
   }
-  /* #game {
-    gap: .3rem;
-  } */
 }
