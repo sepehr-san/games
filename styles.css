@@ -60,6 +60,9 @@ h1 {
   background-color: #9EC5AB;
   color: #104F55;
 }
+sub {
+  font-size: .8rem;
+}
 
 
 @media only screen and (max-width: 320px) {
