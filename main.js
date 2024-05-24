@@ -1,5 +1,5 @@
-// VERSION 0.91
-// Fix Descktio and mobile compatibility
+// VERSION 0.95
+// Fix timing
 
 
 let order = [];
@@ -50,67 +50,93 @@ function generateOrder(number){
   return order;
 }
 async function buttonClick(button){
-  console.log(userChoise);
   if (button === button1){
     userChoise.push("o1");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button1.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button1.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button2){
     userChoise.push("o2");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button2.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button2.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button3){
     userChoise.push("o3");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button3.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button3.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button4){
     userChoise.push("o4");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button4.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button4.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button5){
     userChoise.push("o5");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button5.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button5.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button6){
     userChoise.push("o6");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button6.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button6.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button7){
     userChoise.push("o7");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button7.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button7.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button8){
     userChoise.push("o8");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button8.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button8.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
   if (button === button9){
     userChoise.push("o9");
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    button9.style.backgroundColor = "papayawhip";
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    button9.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
+      await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
   }
@@ -141,7 +167,7 @@ function newLevel(level){
 async function iterateWithDelay(arr) {
   await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
   for (const element of arr) {
-    await new Promise((resolve) => setTimeout(resolve, 50)); // Wait 0ms
+    await new Promise((resolve) => setTimeout(resolve, 50)); // Wait 50ms
     let circle = document.getElementById(element);
     circle.style.backgroundColor = "palevioletred";
     await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
@@ -159,132 +185,60 @@ newLevel(1);
 if (!isTouchDevice){
   button1.addEventListener("mousedown", () => {
     buttonClick(button1);
-    button1.style.backgroundColor = "papayawhip";
-  });
-  button1.addEventListener("mouseup", () => {
-    button1.style.backgroundColor = "#9EC5AB";
   });
   button2.addEventListener("mousedown", () => {
     buttonClick(button2);
-    button2.style.backgroundColor = "papayawhip";
-  });
-  button2.addEventListener("mouseup", () => {
-    button2.style.backgroundColor = "#9EC5AB";
   });
   button3.addEventListener("mousedown", () => {
     buttonClick(button3);
-    button3.style.backgroundColor = "papayawhip";
-  });
-  button3.addEventListener("mouseup", () => {
-    button3.style.backgroundColor = "#9EC5AB";
   });
   button4.addEventListener("mousedown", () => {
     buttonClick(button4);
-    button4.style.backgroundColor = "papayawhip";
-  });
-  button4.addEventListener("mouseup", () => {
-    button4.style.backgroundColor = "#9EC5AB";
   });
   button5.addEventListener("mousedown", () => {
     buttonClick(button5);
-    button5.style.backgroundColor = "papayawhip";
-  });
-  button5.addEventListener("mouseup", () => {
-    button5.style.backgroundColor = "#9EC5AB";
   });
   button6.addEventListener("mousedown", () => {
     buttonClick(button6);
-    button6.style.backgroundColor = "papayawhip";
-  });
-  button6.addEventListener("mouseup", () => {
-    button6.style.backgroundColor = "#9EC5AB";
   });
   button7.addEventListener("mousedown", () => {
     buttonClick(button7);
-    button7.style.backgroundColor = "papayawhip";
-  });
-  button7.addEventListener("mouseup", () => {
-    button7.style.backgroundColor = "#9EC5AB";
   });
   button8.addEventListener("mousedown", () => {
     buttonClick(button8);
-    button8.style.backgroundColor = "papayawhip";
-  });
-  button8.addEventListener("mouseup", () => {
-    button8.style.backgroundColor = "#9EC5AB";
   });
   button9.addEventListener("mousedown", () => {
     buttonClick(button9);
-    button9.style.backgroundColor = "papayawhip";
-  });
-  button9.addEventListener("mouseup", () => {
-    button9.style.backgroundColor = "#9EC5AB";
   });
 
 } else {
 
   button1.addEventListener("touchstart", () => {
     buttonClick(button1);
-    button1.style.backgroundColor = "papayawhip";
-  });
-  button1.addEventListener("touchend", () => {
-    button1.style.backgroundColor = "#9EC5AB";
   });
   button2.addEventListener("touchstart", () => {
     buttonClick(button2);
-    button2.style.backgroundColor = "papayawhip";
-  });
-  button2.addEventListener("touchend", () => {
-    button2.style.backgroundColor = "#9EC5AB";
   });
   button3.addEventListener("touchstart", () => {
     buttonClick(button3);
-    button3.style.backgroundColor = "papayawhip";
-  });
-  button3.addEventListener("touchend", () => {
-    button3.style.backgroundColor = "#9EC5AB";
   });
   button4.addEventListener("touchstart", () => {
     buttonClick(button4);
-    button4.style.backgroundColor = "papayawhip";
-  });
-  button4.addEventListener("touchend", () => {
-    button4.style.backgroundColor = "#9EC5AB";
   });
   button5.addEventListener("touchstart", () => {
     buttonClick(button5);
-    button5.style.backgroundColor = "papayawhip";
-  });
-  button5.addEventListener("touchend", () => {
-    button5.style.backgroundColor = "#9EC5AB";
   });
   button6.addEventListener("touchstart", () => {
     buttonClick(button6);
-    button6.style.backgroundColor = "papayawhip";
-  });
-  button6.addEventListener("touchend", () => {
-    button6.style.backgroundColor = "#9EC5AB";
   });
   button7.addEventListener("touchstart", () => {
     buttonClick(button7);
-    button7.style.backgroundColor = "papayawhip";
-  });
-  button7.addEventListener("touchsend", () => {
-    button7.style.backgroundColor = "#9EC5AB";
   });
   button8.addEventListener("touchstart", () => {
     buttonClick(button8);
-    button8.style.backgroundColor = "papayawhip";
-  });
-  button8.addEventListener("touchend", () => {
-    button8.style.backgroundColor = "#9EC5AB";
   });
   button9.addEventListener("touchstart", () => {
     buttonClick(button9);
-    button9.style.backgroundColor = "papayawhip";
-  });
-  button9.addEventListener("touchend", () => {
-    button9.style.backgroundColor = "#9EC5AB";
   });
 }
 
