@@ -1,4 +1,4 @@
-// VERSION 0.95
+// VERSION 0.96
 // Fix timing
 
 
@@ -7,13 +7,14 @@ let userChoise = [];
 let score = 0;
 let level = 1;
 var hardness = 3;
+let versiontext = 0.96;
+const showDelayTime = 200;
 
 let isTouchDevice = false;
 // Check for touch device
 if ("ontouchstart" in document.documentElement) {
   isTouchDevice = true;
 }
-
 
 
 const button1 = document.getElementById("o1");
@@ -28,6 +29,9 @@ const button9 = document.getElementById("o9");
 const submitButton = document.getElementById("submit");
 const scoreText = document.getElementById("scoretext");
 const levelText = document.getElementById("leveltext");
+const versionText = document.getElementById("versiontext");
+
+versionText.innerHTML = versiontext;
 
 function arraysCheck(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -53,7 +57,7 @@ async function buttonClick(button){
   if (button === button1){
     userChoise.push("o1");
     button1.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button1.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -63,7 +67,7 @@ async function buttonClick(button){
   if (button === button2){
     userChoise.push("o2");
     button2.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button2.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -73,7 +77,7 @@ async function buttonClick(button){
   if (button === button3){
     userChoise.push("o3");
     button3.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button3.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -83,7 +87,7 @@ async function buttonClick(button){
   if (button === button4){
     userChoise.push("o4");
     button4.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button4.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -93,7 +97,7 @@ async function buttonClick(button){
   if (button === button5){
     userChoise.push("o5");
     button5.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button5.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -103,7 +107,7 @@ async function buttonClick(button){
   if (button === button6){
     userChoise.push("o6");
     button6.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button6.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -113,7 +117,7 @@ async function buttonClick(button){
   if (button === button7){
     userChoise.push("o7");
     button7.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button7.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -123,7 +127,7 @@ async function buttonClick(button){
   if (button === button8){
     userChoise.push("o8");
     button8.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button8.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -133,7 +137,7 @@ async function buttonClick(button){
   if (button === button9){
     userChoise.push("o9");
     button9.style.backgroundColor = "papayawhip";
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button9.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
       await new Promise((resolve) => setTimeout(resolve, 100));
