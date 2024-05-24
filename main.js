@@ -1,5 +1,5 @@
-// VERSION 0.9
-// ADDED MOUSEUP EVENT
+// VERSION 0.91
+// Fix Descktio and mobile compatibility
 
 
 let order = [];
@@ -7,6 +7,15 @@ let userChoise = [];
 let score = 0;
 let level = 1;
 var hardness = 3;
+
+let isTouchDevice = false;
+// Check for touch device
+if ("ontouchstart" in document.documentElement) {
+  isTouchDevice = true;
+}
+
+
+
 const button1 = document.getElementById("o1");
 const button2 = document.getElementById("o2");
 const button3 = document.getElementById("o3");
@@ -145,148 +154,144 @@ async function iterateWithDelay(arr) {
 
 newLevel(1);
 
-button1.addEventListener("mousedown", () => {
-  buttonClick(button1);
-  button1.style.backgroundColor = "papayawhip";
-});
-button1.addEventListener("mouseup", () => {
-  button1.style.backgroundColor = "#9EC5AB";
-});
-button1.addEventListener("touchstart", () => {
-  buttonClick(button1);
-  button1.style.backgroundColor = "papayawhip";
-});
-button1.addEventListener("touchend", () => {
-  button1.style.backgroundColor = "#9EC5AB";
-});
 
 
-button2.addEventListener("mousedown", () => {
-  buttonClick(button2);
-  button2.style.backgroundColor = "papayawhip";
-});
-button2.addEventListener("mouseup", () => {
-  button2.style.backgroundColor = "#9EC5AB";
-});
-button2.addEventListener("touchstart", () => {
-  buttonClick(button2);
-  button2.style.backgroundColor = "papayawhip";
-});
-button2.addEventListener("touchend", () => {
-  button2.style.backgroundColor = "#9EC5AB";
-});
+if (!isTouchDevice){
+  button1.addEventListener("mousedown", () => {
+    buttonClick(button1);
+    button1.style.backgroundColor = "papayawhip";
+  });
+  button1.addEventListener("mouseup", () => {
+    button1.style.backgroundColor = "#9EC5AB";
+  });
+  button2.addEventListener("mousedown", () => {
+    buttonClick(button2);
+    button2.style.backgroundColor = "papayawhip";
+  });
+  button2.addEventListener("mouseup", () => {
+    button2.style.backgroundColor = "#9EC5AB";
+  });
+  button3.addEventListener("mousedown", () => {
+    buttonClick(button3);
+    button3.style.backgroundColor = "papayawhip";
+  });
+  button3.addEventListener("mouseup", () => {
+    button3.style.backgroundColor = "#9EC5AB";
+  });
+  button4.addEventListener("mousedown", () => {
+    buttonClick(button4);
+    button4.style.backgroundColor = "papayawhip";
+  });
+  button4.addEventListener("mouseup", () => {
+    button4.style.backgroundColor = "#9EC5AB";
+  });
+  button5.addEventListener("mousedown", () => {
+    buttonClick(button5);
+    button5.style.backgroundColor = "papayawhip";
+  });
+  button5.addEventListener("mouseup", () => {
+    button5.style.backgroundColor = "#9EC5AB";
+  });
+  button6.addEventListener("mousedown", () => {
+    buttonClick(button6);
+    button6.style.backgroundColor = "papayawhip";
+  });
+  button6.addEventListener("mouseup", () => {
+    button6.style.backgroundColor = "#9EC5AB";
+  });
+  button7.addEventListener("mousedown", () => {
+    buttonClick(button7);
+    button7.style.backgroundColor = "papayawhip";
+  });
+  button7.addEventListener("mouseup", () => {
+    button7.style.backgroundColor = "#9EC5AB";
+  });
+  button8.addEventListener("mousedown", () => {
+    buttonClick(button8);
+    button8.style.backgroundColor = "papayawhip";
+  });
+  button8.addEventListener("mouseup", () => {
+    button8.style.backgroundColor = "#9EC5AB";
+  });
+  button9.addEventListener("mousedown", () => {
+    buttonClick(button9);
+    button9.style.backgroundColor = "papayawhip";
+  });
+  button9.addEventListener("mouseup", () => {
+    button9.style.backgroundColor = "#9EC5AB";
+  });
+
+} else {
+
+  button1.addEventListener("touchstart", () => {
+    buttonClick(button1);
+    button1.style.backgroundColor = "papayawhip";
+  });
+  button1.addEventListener("touchend", () => {
+    button1.style.backgroundColor = "#9EC5AB";
+  });
+  button2.addEventListener("touchstart", () => {
+    buttonClick(button2);
+    button2.style.backgroundColor = "papayawhip";
+  });
+  button2.addEventListener("touchend", () => {
+    button2.style.backgroundColor = "#9EC5AB";
+  });
+  button3.addEventListener("touchstart", () => {
+    buttonClick(button3);
+    button3.style.backgroundColor = "papayawhip";
+  });
+  button3.addEventListener("touchend", () => {
+    button3.style.backgroundColor = "#9EC5AB";
+  });
+  button4.addEventListener("touchstart", () => {
+    buttonClick(button4);
+    button4.style.backgroundColor = "papayawhip";
+  });
+  button4.addEventListener("touchend", () => {
+    button4.style.backgroundColor = "#9EC5AB";
+  });
+  button5.addEventListener("touchstart", () => {
+    buttonClick(button5);
+    button5.style.backgroundColor = "papayawhip";
+  });
+  button5.addEventListener("touchend", () => {
+    button5.style.backgroundColor = "#9EC5AB";
+  });
+  button6.addEventListener("touchstart", () => {
+    buttonClick(button6);
+    button6.style.backgroundColor = "papayawhip";
+  });
+  button6.addEventListener("touchend", () => {
+    button6.style.backgroundColor = "#9EC5AB";
+  });
+  button7.addEventListener("touchstart", () => {
+    buttonClick(button7);
+    button7.style.backgroundColor = "papayawhip";
+  });
+  button7.addEventListener("touchsend", () => {
+    button7.style.backgroundColor = "#9EC5AB";
+  });
+  button8.addEventListener("touchstart", () => {
+    buttonClick(button8);
+    button8.style.backgroundColor = "papayawhip";
+  });
+  button8.addEventListener("touchend", () => {
+    button8.style.backgroundColor = "#9EC5AB";
+  });
+  button9.addEventListener("touchstart", () => {
+    buttonClick(button9);
+    button9.style.backgroundColor = "papayawhip";
+  });
+  button9.addEventListener("touchend", () => {
+    button9.style.backgroundColor = "#9EC5AB";
+  });
+}
 
 
-button3.addEventListener("mousedown", () => {
-  buttonClick(button3);
-  button3.style.backgroundColor = "papayawhip";
-});
-button3.addEventListener("mouseup", () => {
-  button3.style.backgroundColor = "#9EC5AB";
-});
-button3.addEventListener("touchstart", () => {
-  buttonClick(button3);
-  button3.style.backgroundColor = "papayawhip";
-});
-button3.addEventListener("touchend", () => {
-  button3.style.backgroundColor = "#9EC5AB";
-});
 
 
-button4.addEventListener("mousedown", () => {
-  buttonClick(button4);
-  button4.style.backgroundColor = "papayawhip";
-});
-button4.addEventListener("mouseup", () => {
-  button4.style.backgroundColor = "#9EC5AB";
-});
-button4.addEventListener("touchstart", () => {
-  buttonClick(button4);
-  button4.style.backgroundColor = "papayawhip";
-});
-button4.addEventListener("touchend", () => {
-  button4.style.backgroundColor = "#9EC5AB";
-});
 
-
-button5.addEventListener("mousedown", () => {
-  buttonClick(button5);
-  button5.style.backgroundColor = "papayawhip";
-});
-button5.addEventListener("mouseup", () => {
-  button5.style.backgroundColor = "#9EC5AB";
-});
-button5.addEventListener("touchstart", () => {
-  buttonClick(button5);
-  button5.style.backgroundColor = "papayawhip";
-});
-button5.addEventListener("touchend", () => {
-  button5.style.backgroundColor = "#9EC5AB";
-});
-
-
-button6.addEventListener("mousedown", () => {
-  buttonClick(button6);
-  button6.style.backgroundColor = "papayawhip";
-});
-button6.addEventListener("mouseup", () => {
-  button6.style.backgroundColor = "#9EC5AB";
-});
-button6.addEventListener("touchstart", () => {
-  buttonClick(button6);
-  button6.style.backgroundColor = "papayawhip";
-});
-button6.addEventListener("touchend", () => {
-  button6.style.backgroundColor = "#9EC5AB";
-});
-
-
-button7.addEventListener("mousedown", () => {
-  buttonClick(button7);
-  button7.style.backgroundColor = "papayawhip";
-});
-button7.addEventListener("mouseup", () => {
-  button7.style.backgroundColor = "#9EC5AB";
-});
-button7.addEventListener("touchstart", () => {
-  buttonClick(button7);
-  button7.style.backgroundColor = "papayawhip";
-});
-button7.addEventListener("touchsend", () => {
-  button7.style.backgroundColor = "#9EC5AB";
-});
-
-
-button8.addEventListener("mousedown", () => {
-  buttonClick(button8);
-  button8.style.backgroundColor = "papayawhip";
-});
-button8.addEventListener("mouseup", () => {
-  button8.style.backgroundColor = "#9EC5AB";
-});
-button8.addEventListener("touchstart", () => {
-  buttonClick(button8);
-  button8.style.backgroundColor = "papayawhip";
-});
-button8.addEventListener("touchend", () => {
-  button8.style.backgroundColor = "#9EC5AB";
-});
-
-
-button9.addEventListener("mousedown", () => {
-  buttonClick(button9);
-  button9.style.backgroundColor = "papayawhip";
-});
-button9.addEventListener("mouseup", () => {
-  button9.style.backgroundColor = "#9EC5AB";
-});
-button9.addEventListener("touchstart", () => {
-  buttonClick(button9);
-  button9.style.backgroundColor = "papayawhip";
-});
-button9.addEventListener("touchend", () => {
-  button9.style.backgroundColor = "#9EC5AB";
-});
 
 submitButton.onclick = submit;
 
