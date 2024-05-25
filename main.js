@@ -1,13 +1,12 @@
-// VERSION 0.96
-// Fix timing
+// VERSION 1
+// Fix colors and responsivness
 
 
 let order = [];
 let userChoise = [];
 let score = 0;
 let level = 1;
-var hardness = 3;
-let versiontext = 0.96;
+let versiontext = 1;
 const showDelayTime = 200;
 
 let isTouchDevice = false;
@@ -157,17 +156,13 @@ function submit(){
   } else {
     alert("You lose");
     userChoise = [];
+    score -= 10;
+    scoreText.innerText = score;
     newLevel(level)
   }
 }
 
-function newLevel(level){
-  if (level % 3 === 0){
-    hardness++;
-  }
-  order = generateOrder(hardness);
-  iterateWithDelay(order);
-}
+
 async function iterateWithDelay(arr) {
   await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
   for (const element of arr) {
@@ -177,13 +172,12 @@ async function iterateWithDelay(arr) {
     await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
     circle.style.backgroundColor = "#9EC5AB";
   }
+  
 }
-
-
-
-
-newLevel(1);
-
+function newLevel(level){
+  order = generateOrder(level);
+  iterateWithDelay(order);
+}
 
 
 if (!isTouchDevice){
@@ -215,7 +209,7 @@ if (!isTouchDevice){
     buttonClick(button9);
   });
 
-} else {
+} else if (isTouchDevice) {
 
   button1.addEventListener("touchstart", () => {
     buttonClick(button1);
@@ -246,12 +240,9 @@ if (!isTouchDevice){
   });
 }
 
-
-
-
-
-
 submitButton.onclick = submit;
+
+newLevel(1);
 
 
 
