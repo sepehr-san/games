@@ -6,7 +6,7 @@ let order = [];
 let userChoise = [];
 let score = 0;
 let level = 1;
-let versiontext = 1;
+let versiontext = "v1.0";
 const showDelayTime = 200;
 
 let isTouchDevice = false;
@@ -25,11 +25,14 @@ const button6 = document.getElementById("o6");
 const button7 = document.getElementById("o7");
 const button8 = document.getElementById("o8");
 const button9 = document.getElementById("o9");
+const gameContainer = document.getElementById("game-container");
+const alertBox = document.getElementById("alert");
+const tryAgainButton = document.getElementById("try-again-button");
+const alertText = document.getElementById("alerttext");
 const submitButton = document.getElementById("submit");
 const scoreText = document.getElementById("scoretext");
 const levelText = document.getElementById("leveltext");
 const versionText = document.getElementById("versiontext");
-
 versionText.innerHTML = versiontext;
 
 function arraysCheck(arr1, arr2) {
@@ -39,6 +42,27 @@ function arraysCheck(arr1, arr2) {
 
   return arr1.every((element, index) => element === arr2[index]);
 }
+
+function showHideAlert(show){
+  if (show){
+    alertBox.style.top = "25%";
+    gameContainer.style.filter = "blur(5px)"
+  }
+  if (!show){
+    alertBox.style.top = "110%";
+    gameContainer.style.filter = "blur(0px)"
+  }
+}
+function tryAgain(level){
+  showHideAlert(0);
+  newLevel(level);
+}
+
+
+tryAgainButton.addEventListener("mousedown", () => {
+  tryAgain(level);
+});
+
 
 function generateOrder(number){
   order = [];
@@ -146,19 +170,24 @@ async function buttonClick(button){
 }
 function submit(){
   if (arraysCheck(userChoise, order)){
-    alert("You Win!");
+    console.log(userChoise);
+    // alert("You Win!");
     userChoise = [];
     level += 1;
     score += 10;
     levelText.innerText = level;
     scoreText.innerText = score;
-    newLevel(level);
+    alertText.innerText = "Made it!";
+    tryAgainButton.innerText = "Next Level";
+    showHideAlert(1);
   } else {
-    alert("You lose");
+    // alert("You lose");
     userChoise = [];
     score -= 10;
     scoreText.innerText = score;
-    newLevel(level)
+    alertText.innerText = "Lose";
+    tryAgainButton.innerText = "Try Again";
+    showHideAlert(1);
   }
 }
 
@@ -175,6 +204,7 @@ async function iterateWithDelay(arr) {
   
 }
 function newLevel(level){
+  showHideAlert(0);
   order = generateOrder(level);
   iterateWithDelay(order);
 }
@@ -240,8 +270,7 @@ if (!isTouchDevice){
   });
 }
 
-submitButton.onclick = submit;
-
+// submitButton.onclick = submit;
 newLevel(1);
 
 
