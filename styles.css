@@ -19,6 +19,8 @@ h1 {
   margin: 10px auto;
   border-radius: 10px;
   padding-bottom: 15px;
+  filter: blur(0px);
+  transition: all 200ms;
 }
 #header {
   background-color: #104F55;
@@ -48,27 +50,44 @@ h1 {
   justify-self: center;
   align-self: center;
 }
-
-
-#submit {
-  display: none;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
-  padding: 5px;
-  margin: 0px auto;
-  width: 100px;
-  border: 2px solid #104F55;
-  background-color: #104F55;
-  border-radius: 10px;
-  color: #9EC5AB;
-}
-#submit:active {
-  background-color: #9EC5AB;
-  color: #104F55;
-}
 sub {
   font-size: .8rem;
+}
+#alert {
+  position: fixed;
+  top: 110%;
+  left: 25%;
+  width: 50%;
+  padding: 20px;
+  /* height: 50%; */
+  background-color: rgb(147, 38, 74);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms;
+}
+#alert p {
+  text-align: center;
+  color: #fdfdfd;
+  font-size: 2.2rem;
+}
+#alert button {
+  cursor: pointer;
+  text-align: center;
+  width: 40%;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: #551021;
+  margin-top: 20px;
+}
+#alert button:hover {
+  background-color: #c28f9c;
+}
+#alert button:active {
+  background-color: #c28f9c;
 }
 
 /* 
