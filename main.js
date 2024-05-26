@@ -1,12 +1,12 @@
-// VERSION 1
-// Fix colors and responsivness
+// VERSION 1.1
+// add sounds
 
 
 let order = [];
 let userChoise = [];
 let score = 0;
 let level = 1;
-let versiontext = "v1.0";
+let versiontext = "v1.1";
 const showDelayTime = 200;
 
 let isTouchDevice = false;
@@ -33,6 +33,16 @@ const submitButton = document.getElementById("submit");
 const scoreText = document.getElementById("scoretext");
 const levelText = document.getElementById("leveltext");
 const versionText = document.getElementById("versiontext");
+const aMp3 = document.getElementById("amp3");
+const bMp3 = document.getElementById("bmp3");
+const cMp3 = document.getElementById("cmp3");
+const dMp3 = document.getElementById("dmp3");
+const eMp3 = document.getElementById("emp3");
+const fMp3 = document.getElementById("fmp3");
+const gMp3 = document.getElementById("gmp3");
+const c5Mp3 = document.getElementById("c5mp3");
+const d5Mp3 = document.getElementById("d5mp3");
+const notes = [aMp3, bMp3, cMp3, dMp3, eMp3, fMp3, gMp3, c5Mp3, d5Mp3];
 versionText.innerHTML = versiontext;
 
 function arraysCheck(arr1, arr2) {
@@ -80,6 +90,8 @@ async function buttonClick(button){
   if (button === button1){
     userChoise.push("o1");
     button1.style.backgroundColor = "papayawhip";
+    let newaMp3 = aMp3.cloneNode();
+    newaMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button1.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -90,6 +102,8 @@ async function buttonClick(button){
   if (button === button2){
     userChoise.push("o2");
     button2.style.backgroundColor = "papayawhip";
+    let newbMp3 = bMp3.cloneNode();
+    newbMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button2.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -100,6 +114,8 @@ async function buttonClick(button){
   if (button === button3){
     userChoise.push("o3");
     button3.style.backgroundColor = "papayawhip";
+    let newcMp3 = cMp3.cloneNode();
+    newcMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button3.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -110,6 +126,8 @@ async function buttonClick(button){
   if (button === button4){
     userChoise.push("o4");
     button4.style.backgroundColor = "papayawhip";
+    let newdMp3 = dMp3.cloneNode();
+    newdMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button4.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -120,6 +138,8 @@ async function buttonClick(button){
   if (button === button5){
     userChoise.push("o5");
     button5.style.backgroundColor = "papayawhip";
+    let neweMp3 = eMp3.cloneNode();
+    neweMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button5.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -130,6 +150,8 @@ async function buttonClick(button){
   if (button === button6){
     userChoise.push("o6");
     button6.style.backgroundColor = "papayawhip";
+    let newfMp3 = fMp3.cloneNode();
+    newfMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button6.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -140,6 +162,8 @@ async function buttonClick(button){
   if (button === button7){
     userChoise.push("o7");
     button7.style.backgroundColor = "papayawhip";
+    let newgMp3 = gMp3.cloneNode();
+    newgMp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button7.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -150,6 +174,8 @@ async function buttonClick(button){
   if (button === button8){
     userChoise.push("o8");
     button8.style.backgroundColor = "papayawhip";
+    let newc5Mp3 = c5Mp3.cloneNode();
+    newc5Mp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button8.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -160,6 +186,8 @@ async function buttonClick(button){
   if (button === button9){
     userChoise.push("o9");
     button9.style.backgroundColor = "papayawhip";
+    let newd5Mp3 = d5Mp3.cloneNode();
+    newd5Mp3.play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button9.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -198,11 +226,14 @@ async function iterateWithDelay(arr) {
     await new Promise((resolve) => setTimeout(resolve, 50)); // Wait 50ms
     let circle = document.getElementById(element);
     circle.style.backgroundColor = "palevioletred";
+    let newNote = notes[element[1] - 1].cloneNode();
+    newNote.play();
     await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
     circle.style.backgroundColor = "#9EC5AB";
   }
-  
 }
+
+
 function newLevel(level){
   showHideAlert(0);
   order = generateOrder(level);
@@ -271,7 +302,9 @@ if (!isTouchDevice){
 }
 
 // submitButton.onclick = submit;
+
 newLevel(1);
+
 
 
 
