@@ -90,8 +90,8 @@ async function buttonClick(button){
   if (button === button1){
     userChoise.push("o1");
     button1.style.backgroundColor = "papayawhip";
-    aMp3.load();
-    aMp3.play();
+    notes[0].load();
+    notes[0].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button1.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -102,8 +102,8 @@ async function buttonClick(button){
   if (button === button2){
     userChoise.push("o2");
     button2.style.backgroundColor = "papayawhip";
-    bMp3.load();
-    bMp3.play();
+    notes[1].load();
+    notes[1].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button2.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -114,8 +114,8 @@ async function buttonClick(button){
   if (button === button3){
     userChoise.push("o3");
     button3.style.backgroundColor = "papayawhip";
-    cMp3.load();
-    cMp3.play();
+    notes[2].load();
+    notes[2].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button3.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -126,8 +126,8 @@ async function buttonClick(button){
   if (button === button4){
     userChoise.push("o4");
     button4.style.backgroundColor = "papayawhip";
-    dMp3.load();
-    dMp3.play();
+    notes[3].load();
+    notes[3].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button4.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -138,8 +138,8 @@ async function buttonClick(button){
   if (button === button5){
     userChoise.push("o5");
     button5.style.backgroundColor = "papayawhip";
-    eMp3.load();
-    eMp3.play();
+    notes[4].load();
+    notes[4].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button5.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -150,8 +150,8 @@ async function buttonClick(button){
   if (button === button6){
     userChoise.push("o6");
     button6.style.backgroundColor = "papayawhip";
-    fMp3.load();
-    fMp3.play();
+    notes[5].load();
+    notes[5].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button6.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -162,8 +162,8 @@ async function buttonClick(button){
   if (button === button7){
     userChoise.push("o7");
     button7.style.backgroundColor = "papayawhip";
-    gMp3.load();
-    gMp3.play();
+    notes[6].load();
+    notes[6].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button7.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -174,8 +174,8 @@ async function buttonClick(button){
   if (button === button8){
     userChoise.push("o8");
     button8.style.backgroundColor = "papayawhip";
-    c5Mp3.load();
-    c5Mp3.play();
+    notes[7].load();
+    notes[7].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button8.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
@@ -186,8 +186,8 @@ async function buttonClick(button){
   if (button === button9){
     userChoise.push("o9");
     button9.style.backgroundColor = "papayawhip";
-    d5Mp3.load();
-    d5Mp3.play();
+    notes[8].load();
+    notes[8].play();
     await new Promise((resolve) => setTimeout(resolve, showDelayTime));
     button9.style.backgroundColor = "#9EC5AB";
     if (userChoise.length == order.length){
