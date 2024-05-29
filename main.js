@@ -1,13 +1,15 @@
-// VERSION 1.2
-// fix sounds
+// VERSION 1.3
+// speedup in level design
 
 
 let order = [];
 let userChoise = [];
 let score = 0;
 let level = 1;
-let versiontext = "v1.2";
+let versiontext = "v1.3";
 const showDelayTime = 200;
+var memorizeTime = 500;
+let isShowAlert = false;
 
 let isTouchDevice = false;
 // Check for touch device
@@ -57,10 +59,12 @@ function showHideAlert(show){
   if (show){
     alertBox.style.top = "25%";
     gameContainer.style.filter = "blur(5px)"
+    isShowAlert = true;
   }
   if (!show){
     alertBox.style.top = "110%";
     gameContainer.style.filter = "blur(0px)"
+    isShowAlert = false;
   }
 }
 function tryAgain(level){
@@ -73,15 +77,25 @@ tryAgainButton.addEventListener("mousedown", () => {
   tryAgain(level);
 });
 
+window.addEventListener("keyup", function(event) {
+  // Check if the pressed key is Enter (key code 13 or key 'Enter')
+  if (event.key === "Enter" && isShowAlert) {
+    // Your code to be executed when Enter is pressed
+    tryAgain(level);
+  }
+});
+
+
+
 
 function generateOrder(number){
   order = [];
   for (let i = 1; i < number + 1; i++){
     let choise = "o"+String(Math.floor(Math.random() * 9) + 1);
     // UN-COMMENT IF YOU DONT WANT DUPPLICATIONS.
-    // while (order.includes(choise)){
-    //   choise = "o"+String(Math.floor(Math.random() * 9) + 1);
-    // }
+    while (order.includes(choise)){
+      choise = "o"+String(Math.floor(Math.random() * 9) + 1);
+    }
     order.push(choise);
   }
   return order;
@@ -98,6 +112,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button2){
     userChoise.push("o2");
@@ -110,6 +125,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button3){
     userChoise.push("o3");
@@ -122,6 +138,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button4){
     userChoise.push("o4");
@@ -134,6 +151,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button5){
     userChoise.push("o5");
@@ -146,6 +164,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button6){
     userChoise.push("o6");
@@ -158,6 +177,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button7){
     userChoise.push("o7");
@@ -170,6 +190,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button8){
     userChoise.push("o8");
@@ -182,6 +203,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
   if (button === button9){
     userChoise.push("o9");
@@ -194,6 +216,7 @@ async function buttonClick(button){
       await new Promise((resolve) => setTimeout(resolve, 100));
       submit();
     }
+    ifLose();
   }
 }
 function submit(){
@@ -219,15 +242,30 @@ function submit(){
   }
 }
 
+function allElementsInArray(arrA, arrB) {
+  return arrA.every(element => arrB.includes(element));
+}
+
+function ifLose(){
+  if (!allElementsInArray(userChoise, order)){
+    userChoise = [];
+    score -= 10;
+    scoreText.innerText = score;
+    alertText.innerText = "Lose";
+    tryAgainButton.innerText = "Try Again";
+    showHideAlert(1);
+  }
+}
+
 
 async function iterateWithDelay(arr) {
   await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
   for (const element of arr) {
-    await new Promise((resolve) => setTimeout(resolve, 50)); // Wait 50ms
+    await new Promise((resolve) => setTimeout(resolve, Math.floor(memorizeTime / 10))); // Wait between flashes
     let circle = document.getElementById(element);
     circle.style.backgroundColor = "palevioletred";
     notes[element[1] - 1].play();
-    await new Promise((resolve) => setTimeout(resolve, 500)); // Wait 500ms
+    await new Promise((resolve) => setTimeout(resolve, memorizeTime)); // Wait flashes
     circle.style.backgroundColor = "#9EC5AB";
   }
 }
@@ -235,6 +273,12 @@ async function iterateWithDelay(arr) {
 
 function newLevel(level){
   showHideAlert(0);
+  if (level > 6){
+    level = 6;
+    if (memorizeTime > 200){
+      memorizeTime = memorizeTime - 50;
+    }
+  };
   order = generateOrder(level);
   iterateWithDelay(order);
 }
@@ -300,7 +344,6 @@ if (!isTouchDevice){
   });
 }
 
-// submitButton.onclick = submit;
 
 newLevel(1);
 
