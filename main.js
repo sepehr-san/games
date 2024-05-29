@@ -100,6 +100,7 @@ function generateOrder(number){
   }
   return order;
 }
+
 async function buttonClick(button){
   if (button === button1){
     userChoise.push("o1");
@@ -230,6 +231,9 @@ function submit(){
     scoreText.innerText = score;
     alertText.innerText = "Made it!";
     tryAgainButton.innerText = "Next Level";
+    if (memorizeTime > 200 && level > 6){
+      memorizeTime = memorizeTime - 50;
+    }
     showHideAlert(1);
   } else {
     // alert("You lose");
@@ -242,8 +246,13 @@ function submit(){
   }
 }
 
-function allElementsInArray(arrA, arrB) {
-  return arrA.every(element => arrB.includes(element));
+function allElementsInArray(part, full) {
+  for (let i = 0; i <= part.length - 1; i++){
+    if (part[i] != full[i]){
+      return false;
+    }
+  }
+  return true;
 }
 
 function ifLose(){
@@ -274,12 +283,9 @@ async function iterateWithDelay(arr) {
 function newLevel(level){
   showHideAlert(0);
   if (level > 6){
-    level = 6;
-    if (memorizeTime > 200){
-      memorizeTime = memorizeTime - 50;
-    }
-  };
-  order = generateOrder(level);
+    order = generateOrder(6);
+  } else {
+  order = generateOrder(level);}
   iterateWithDelay(order);
 }
 
